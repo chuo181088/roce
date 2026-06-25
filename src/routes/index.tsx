@@ -99,7 +99,7 @@ function Hero() {
               <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-primary" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
             </span>
-            Suministros Odontológicos · Cibao
+            Suministros Odontológicos ·
           </span>
           <h1 className="animate-fade-up delay-100 mt-7 text-[40px] font-bold leading-[1.04] tracking-[-0.03em] text-foreground sm:text-[56px] lg:text-[64px]">
             Elevando la excelencia clínica en el{" "}
@@ -115,7 +115,7 @@ function Hero() {
               href="#equipos"
               className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-[var(--primary-hover)] hover:shadow-lg"
             >
-              Ver Catálogo Seleccionado
+              Ver Catálogo
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
