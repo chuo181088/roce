@@ -396,6 +396,4 @@ function Contact() {
     </section>
   );
 }
-    </div>
-  );
-}
+
