@@ -49,50 +49,84 @@ function Index() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Layered ambient background */}
       <div
-        className="absolute inset-0 -z-10"
+        aria-hidden
+        className="absolute inset-0 -z-20"
         style={{ background: "var(--gradient-hero)" }}
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-[520px] opacity-[0.5]"
+        className="absolute inset-x-0 top-0 -z-10 h-[640px] opacity-[0.55]"
         style={{
           backgroundImage:
-            "radial-gradient(60% 60% at 50% 0%, oklch(0.27 0.07 258 / 0.10), transparent 70%)",
+            "radial-gradient(55% 55% at 50% 0%, oklch(0.27 0.07 258 / 0.14), transparent 70%)",
         }}
       />
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-24 pt-16 sm:pt-24 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:pb-32 lg:pt-28">
+      <div
+        aria-hidden
+        className="absolute -top-32 -left-32 -z-10 h-[480px] w-[480px] rounded-full opacity-40 blur-3xl"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, oklch(0.27 0.07 258 / 0.16), transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute -bottom-40 right-[-10%] -z-10 h-[520px] w-[520px] rounded-full opacity-50 blur-3xl"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, oklch(0.62 0.05 230 / 0.18), transparent 70%)",
+        }}
+      />
+      {/* Subtle grid texture */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(oklch(0.27 0.07 258) 1px, transparent 1px), linear-gradient(90deg, oklch(0.27 0.07 258) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 75%)",
+        }}
+      />
+
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-24 pt-14 sm:pt-20 lg:grid-cols-[1.05fr_1.1fr] lg:gap-16 lg:px-8 lg:pb-32 lg:pt-24">
         <div className="flex flex-col">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <span className="animate-fade-up inline-flex w-fit items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-primary" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+            </span>
             Suministros Odontológicos · Cibao
           </span>
-          <h1 className="mt-7 text-[40px] font-bold leading-[1.04] tracking-[-0.03em] text-foreground sm:text-[56px] lg:text-[64px]">
+          <h1 className="animate-fade-up delay-100 mt-7 text-[40px] font-bold leading-[1.04] tracking-[-0.03em] text-foreground sm:text-[56px] lg:text-[64px]">
             Elevando la excelencia clínica en el{" "}
             <span className="text-primary">Cibao.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[17px]">
+          <p className="animate-fade-up delay-200 mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[17px]">
             Suministros odontológicos de precisión con soporte técnico directo
             en Santiago. Equipos, materiales y asesoría especializada para la
             práctica clínica moderna.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="animate-fade-up delay-300 mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#equipos"
-              className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:bg-[var(--primary-hover)]"
+              className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-[var(--primary-hover)] hover:shadow-lg"
             >
               Ver Catálogo Seleccionado
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-background/80 px-5 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-secondary"
             >
               Hablar con un asesor
             </a>
           </div>
 
-          <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
+          <dl className="animate-fade-up delay-500 mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
             {[
               { k: "+15", v: "Años en RD" },
               { k: "+10", v: "Marcas oficiales" },
@@ -106,21 +140,52 @@ function Hero() {
           </dl>
         </div>
 
-        <div className="relative">
+        <div className="relative animate-image-reveal delay-200">
+          {/* Soft halo behind image */}
           <div
             aria-hidden
-            className="absolute -inset-6 -z-10 rounded-[28px] bg-primary/[0.04] blur-2xl"
+            className="absolute -inset-10 -z-10 rounded-[40px] bg-primary/[0.06] blur-3xl"
           />
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-elegant">
+          <div
+            aria-hidden
+            className="absolute -right-6 -top-6 -z-10 h-40 w-40 rounded-full bg-primary/[0.08] blur-2xl"
+          />
+
+          <div className="relative overflow-hidden rounded-[28px] border border-border bg-surface shadow-elegant animate-float-soft">
             <img
               src={heroImage}
-              alt="Equipo dental moderno ROCE Dental"
+              alt="Equipo dental moderno en entorno clínico ROCE Dental"
               width={1280}
               height={1280}
-              className="aspect-[4/5] w-full object-cover sm:aspect-[5/6]"
+              className="aspect-[4/5] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.03] sm:aspect-[5/6]"
               fetchPriority="high"
             />
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-background/85 px-4 py-3 backdrop-blur-md">
+            {/* Image gradient overlays for depth */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, transparent 45%, oklch(0.22 0.04 256 / 0.55) 100%)",
+              }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 mix-blend-soft-light"
+              style={{
+                background:
+                  "linear-gradient(135deg, oklch(0.27 0.07 258 / 0.25), transparent 55%)",
+              }}
+            />
+
+            {/* Top-left floating chip */}
+            <div className="animate-fade-up delay-500 absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5" />
+              Tecnología Clínica
+            </div>
+
+            {/* Bottom credentials bar */}
+            <div className="animate-fade-up delay-700 absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-white/30 bg-white/90 px-4 py-3 backdrop-blur-xl shadow-soft">
               <div className="flex items-center gap-2.5 text-xs">
                 <ShieldCheck className="h-4 w-4 text-primary" />
                 <span className="font-medium text-foreground">Distribuidor autorizado</span>
@@ -128,6 +193,21 @@ function Hero() {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                 ISO · CE
               </span>
+            </div>
+          </div>
+
+          {/* Floating spec card */}
+          <div className="animate-fade-up delay-700 absolute -bottom-6 -left-4 hidden w-52 rounded-2xl border border-border bg-background/95 p-4 shadow-elegant backdrop-blur-md sm:block">
+            <div className="flex items-center gap-2.5">
+              <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/[0.08] text-primary">
+                <Headset className="h-4 w-4" />
+              </span>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  Soporte local
+                </p>
+                <p className="text-sm font-semibold text-foreground">Respuesta &lt; 24h</p>
+              </div>
             </div>
           </div>
         </div>
