@@ -8,13 +8,7 @@ interface BentoCardProps {
   className?: string;
 }
 
-function BentoCard({
-  icon: Icon,
-  label,
-  title,
-  desc,
-  className = "",
-}: BentoCardProps) {
+function BentoCard({ icon: Icon, label, title, desc, className = "" }: BentoCardProps) {
   return (
     <div
       className={`group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:border-primary/30 hover:shadow-elegant ${className}`}
@@ -51,9 +45,8 @@ export function ValueProposition() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Más que un proveedor — un socio operativo. Trabajamos con cada
-            profesional para sostener resultados clínicos consistentes en el
-            tiempo.
+            Más que un proveedor — un socio operativo. Trabajamos con cada profesional para sostener
+            resultados clínicos consistentes en el tiempo.
           </p>
         </div>
 

@@ -7,13 +7,22 @@ export function Footer() {
         <div className="space-y-4">
           <Logo />
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Suministros odontológicos de precisión y soporte técnico directo en la
-            República Dominicana.
+            Suministros odontológicos de precisión y soporte técnico directo en la República
+            Dominicana.
           </p>
         </div>
-        <FooterCol title="Compañía" items={["Nuestra Empresa", "Equipos", "Materiales", "Soporte Técnico"]} />
-        <FooterCol title="Contacto" items={["Santiago", "Santo Domingo", "+1 (809) 000-0000", "hola@rocedental.com"]} />
-        <FooterCol title="Horario" items={["Lun – Vie · 8:00 – 6:00", "Sáb · 9:00 – 1:00", "Soporte 24/7 técnico"]} />
+        <FooterCol
+          title="Compañía"
+          items={["Nuestra Empresa", "Equipos", "Materiales", "Soporte Técnico"]}
+        />
+        <FooterCol
+          title="Contacto"
+          items={["Santiago", "Santo Domingo", "+1 (809) 000-0000", "hola@rocedental.com"]}
+        />
+        <FooterCol
+          title="Horario"
+          items={["Lun – Vie · 8:00 – 6:00", "Sáb · 9:00 – 1:00", "Soporte 24/7 técnico"]}
+        />
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center lg:px-8">
@@ -33,7 +42,9 @@ function FooterCol({ title, items }: { title: string; items: string[] }) {
       </h4>
       <ul className="space-y-2.5 text-sm text-muted-foreground">
         {items.map((i) => (
-          <li key={i} className="transition-colors hover:text-foreground">{i}</li>
+          <li key={i} className="transition-colors hover:text-foreground">
+            {i}
+          </li>
         ))}
       </ul>
     </div>

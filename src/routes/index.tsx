@@ -11,9 +11,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ROCE Dental — Excelencia clínica en el Cibao" },
-      { name: "description", content: "Suministros odontológicos de precisión, equipos de última generación y soporte técnico directo en Santiago y Santo Domingo." },
+      {
+        name: "description",
+        content:
+          "Suministros odontológicos de precisión, equipos de última generación y soporte técnico directo en Santiago y Santo Domingo.",
+      },
       { property: "og:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
-      { property: "og:description", content: "Suministros odontológicos de precisión con soporte técnico directo." },
+      {
+        property: "og:description",
+        content: "Suministros odontológicos de precisión con soporte técnico directo.",
+      },
     ],
   }),
   component: Index,

@@ -1,10 +1,10 @@
 // src/components/sections/Hero.tsx
 import React from "react";
-import { Phone, ArrowRight, Star, Calendar } from "lucide-react";
+import { Phone, Star, CircleUserRound, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroAnimate } from "@/components/ui/HeroAnimate";
 import { cn } from "@/lib/utils";
-import heroImage from "@/assets/hero-dental.jpg";
+import heroImage from "@/assets/roce.png";
 
 type HeroProps = {
   microTitulo?: string;
@@ -18,7 +18,6 @@ type HeroProps = {
   ctaLink?: string;
   phoneLink?: string;
   phoneDisplay?: string;
-  videoUrl?: string;
   fallbackImage?: string;
 };
 
@@ -35,16 +34,15 @@ function Stars() {
 export function Hero({
   microTitulo = "Suministros Odontológicos",
   titulo = "Elevando la excelencia",
-  tituloHighlight = "clínica",
-  subtitulo = "en el Cibao.",
-  descripcion = "Suministros odontológicos de precisión con soporte técnico directo en Santiago. Equipos, materiales y asesoría especializada para la práctica clínica moderna.",
+  tituloHighlight = "médica",
+  subtitulo = "en cada consulta.",
+  descripcion = "Equipos de vanguardia, materiales de precisión y asesoría especializada para profesionales odontológicos que buscan lo mejor para sus pacientes.",
   rating = "4.9",
   reviewsText = "de más de 150 clínicas",
   ctaText = "Ver Catálogo",
   ctaLink = "#equipos",
   phoneLink = "tel:+18090000000",
   phoneDisplay = "+1 (809) 000-0000",
-  videoUrl = "videos/roce.mp4",
   fallbackImage = heroImage,
 }: HeroProps) {
 
@@ -53,36 +51,25 @@ export function Hero({
       {(showEffects) => (
         <section
           id="top"
-          className="relative isolate overflow-hidden min-h-screen min-h-[100dvh] flex items-start md:items-center pt-8 md:pt-0 pb-12 md:py-0 bg-background"
+          className="relative isolate overflow-hidden w-full pt-16 pb-12 md:pt-40 md:pb-24 bg-background"
         >
-          {/* 🎥 Background Layer */}
+          {/* 🖼️ Background Layer (Solo Imagen) - ¡ILUMINADO! */}
           <div className="absolute inset-0 -z-30 w-full h-full overflow-hidden">
-            {videoUrl && (
-              <video
-                autoPlay loop muted playsInline preload="auto"
-                className={cn(
-                  "absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out",
-                  showEffects ? "blur-0 scale-100 opacity-60" : "blur-[6px] scale-105 opacity-30"
-                )}
-              >
-                <source src={videoUrl} type="video/mp4" />
-              </video>
-            )}
             <img
               src={fallbackImage}
               alt="Background"
               className={cn(
                 "absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out",
-                videoUrl
-                  ? "opacity-0"
-                  : (showEffects ? "blur-0 scale-100 opacity-60" : "blur-[6px] scale-105 opacity-40")
+                // Modificado para que la imagen resalte mucho más
+                showEffects ? "blur-0 scale-100 opacity-95" : "blur-[6px] scale-105 opacity-80"
               )}
             />
           </div>
 
-          {/* Overlay Oscuro Premium */}
-          <div className="absolute inset-0 -z-20 bg-slate-950/80" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90" />
+          {/* Overlay Oscuro Premium Suavizado */}
+          {/* Bajado de /80 a /50 para quitar el efecto de "lente oscuro" pesado */}
+          <div className="absolute inset-0 -z-20 bg-slate-950/50" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85" />
 
           <div className="mx-auto max-w-7xl w-full px-6 relative z-10">
             <div
@@ -93,72 +80,69 @@ export function Hero({
                   : "translate-y-6 opacity-0 scale-[0.98]"
               )}
             >
-              {/* Etiqueta Soporte Técnico - Separada del título principal */}
-              <div className="mb-24 md:mb-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              {/* Etiqueta microtitulo */}
+              <div className="mb-10 md:mb-12"> {/* Ajustado a mb-10 para el respiro perfecto en móvil */}
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-[0.12em] backdrop-blur-md">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
                   </span>
                   {microTitulo}
                 </span>
               </div>
 
-              {/* Título Principal - Separado de la descripción */}
+              {/* Título Principal */}
               <h1 className="font-serif text-[42px] sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white mb-8 md:mb-12">
                 {titulo}
                 <br />
-                <span className="italic font-normal text-primary">{tituloHighlight}</span> {subtitulo}
+                <span className="italic font-normal text-blue-400">{tituloHighlight}</span> {subtitulo}
               </h1>
 
-              {/* Descripción - Separada de los botones */}
-              <p className="max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed mb-10 md:mb-10">
+              {/* Descripción */}
+              <p className="max-w-xl text-base sm:text-lg text-slate-100 leading-relaxed mb-10 md:mb-10">
                 {descripcion}
               </p>
 
-              {/* Botones */}
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center mb-8">
-                {/* Botón Principal */}
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto rounded-md px-8 py-7 text-sm tracking-wide uppercase bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(0,85,255,0.3)] transition-all border-0"
-                >
-                  <a href={ctaLink} className="flex items-center justify-center">
-                    {ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+              {/* Botones Estilizados con Proporciones Optimizadas */}
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center mb-8">
 
-                {/* Botón Secundario */}
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="lg"
-                  className="w-full sm:w-auto rounded-md px-8 py-7 text-sm tracking-wide uppercase text-white hover:bg-white/10 border-0"
-                >
-                  <a href="#asesoria" className="flex items-center justify-center">
-                    Agendar Asesoría
-                    <Calendar className="ml-2 h-4 w-4 text-primary" />
-                  </a>
-                </Button>
-              </div>
-
-              {/* Teléfono y Rating */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-white/10">
-                <a href={phoneLink} className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
-                  <div className="bg-white/10 p-2 rounded-full">
-                    <Phone className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium">{phoneDisplay}</span>
-                </a>
-
-                <div className="flex items-center gap-2 text-slate-400 text-sm">
-                  <div className="flex text-primary">
-                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="h-3 w-3 fill-current" />)}
-                  </div>
-                  <span>{rating} ({reviewsText})</span>
+                {/* Botón Principal (Ver Catálogo) - Más estilizado */}
+                <div className="relative overflow-hidden rounded-xl active:scale-95 transition-transform duration-200 w-full sm:w-auto">
+                  <div className="destello-movil absolute inset-0 z-10 block" />
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full sm:w-auto relative z-0 rounded-none px-7 py-5 text-xs font-bold tracking-widest uppercase bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/10 transition-all duration-300 border-0"
+                  >
+                    <a href="#" className="flex items-center justify-center gap-2">
+                      {ctaText}
+                      <BookOpen className="h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
+
+                {/* Botón Secundario (Agendar Asesoría) - Más estilizado */}
+                <div className="relative overflow-hidden rounded-xl active:scale-95 transition-transform duration-200 w-full sm:w-auto">
+                  <div className="destello-movil-invertido absolute inset-0 z-10 block" />
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full sm:w-auto relative z-0 rounded-none px-7 py-5 text-xs font-bold tracking-widest uppercase bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all duration-300 backdrop-blur-sm"
+                  >
+                    <a href="#asesoria" className="flex items-center justify-center gap-2">
+                      Asesoría
+                      <CircleUserRound className="h-4 w-4 text-blue-400" />
+                    </a>
+                  </Button>
+                </div>
+
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] text-white tracking-wide">
+                <span className="relative flex h-2 w-2 rounded-full bg-emerald-500">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Soporte y pedidos activos en línea</span>
               </div>
 
             </div>

@@ -22,9 +22,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-border/70 bg-background/85 backdrop-blur-xl" : "bg-background/0"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-border/70 bg-background/85 backdrop-blur-xl" : "bg-background/0"
+        }`}
     >
       <div className="mx-auto grid h-16 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-6 px-5 sm:h-[68px] lg:px-8">
         <Logo />

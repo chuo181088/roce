@@ -94,8 +94,9 @@
   --surface: oklch(0.985 0.005 247);
   --surface-2: oklch(0.965 0.012 250);
   --gradient-hero: linear-gradient(135deg, oklch(0.99 0.005 240) 0%, oklch(0.96 0.014 250) 100%);
-  --shadow-elegant: 0 1px 2px oklch(0.27 0.07 258 / 0.04), 0 12px 32px -12px oklch(0.27 0.07 258 / 0.18);
-  --shadow-soft: 0 1px 2px oklch(0.27 0.07 258 / 0.04), 0 4px 16px -8px oklch(0.27 0.07 258 / 0.10);
+  --shadow-elegant:
+    0 1px 2px oklch(0.27 0.07 258 / 0.04), 0 12px 32px -12px oklch(0.27 0.07 258 / 0.18);
+  --shadow-soft: 0 1px 2px oklch(0.27 0.07 258 / 0.04), 0 4px 16px -8px oklch(0.27 0.07 258 / 0.1);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -169,22 +170,26 @@
 }
 
 @utility marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  /* Esto crea el fade a los lados */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 @keyframes marquee {
-  from {
+  0% {
     transform: translateX(0);
   }
 
-  to {
+  100% {
+    /* Al tener 2 copias exactas en el mismo contenedor flex, 
+       mover -50% deja la segunda copia exactamente donde empezó la primera */
     transform: translateX(-50%);
   }
 }
 
 @utility animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
 }
 
 /* Premium entrance + ambient motion */
@@ -296,7 +301,6 @@
   pointer-events: none;
 }
 
-
 @utility delay-100 {
   animation-delay: 100ms;
 }
@@ -330,4 +334,49 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+@utility destello-movil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* AJUSTE: Concentramos más el blanco en el centro (50%) subiendo la opacidad a 0.45 */
+  background: linear-gradient(90deg,
+      transparent 15%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 85%);
+  /* AJUSTE: Cambiado de 4s a 2s para que sea más rápido y reactivo */
+  animation: destello 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@utility destello-movil-invertido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 15%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 85%);
+  /* Usa la misma animación pero con 'reverse' para que corra al revés */
+  animation: destello 3s infinite ease-in-out reverse;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@utility animate-shimmer {
+  animation: shimmer 2.5s infinite linear;
 }

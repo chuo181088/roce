@@ -39,8 +39,8 @@ export function Solutions() {
             Una sola fuente para la práctica clínica moderna.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Equipos, materiales y servicio técnico integrados — diseñados para
-            clínicas y laboratorios que no pueden detenerse.
+            Equipos, materiales y servicio técnico integrados — diseñados para clínicas y
+            laboratorios que no pueden detenerse.
           </p>
         </div>
 
@@ -59,12 +59,8 @@ export function Solutions() {
                   {c.tag}
                 </span>
               </div>
-              <h3 className="text-xl font-semibold tracking-tight text-foreground">
-                {c.title}
-              </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                {c.desc}
-              </p>
+              <h3 className="text-xl font-semibold tracking-tight text-foreground">{c.title}</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
               <ul className="mt-6 space-y-2.5 border-t border-border pt-5">
                 {c.points.map((p) => (
                   <li key={p} className="flex items-center gap-2 text-[13px] text-foreground">

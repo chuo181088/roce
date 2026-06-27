@@ -78,10 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ROCE Dental — Excelencia clínica en el Cibao" },
-      { name: "description", content: "Suministros odontológicos de precisión, equipos especializados y soporte técnico directo en Santiago y Santo Domingo." },
+      {
+        name: "description",
+        content:
+          "Suministros odontológicos de precisión, equipos especializados y soporte técnico directo en Santiago y Santo Domingo.",
+      },
       { name: "author", content: "ROCE Dental" },
       { property: "og:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
-      { property: "og:description", content: "Suministros odontológicos de precisión con soporte técnico directo." },
+      {
+        property: "og:description",
+        content: "Suministros odontológicos de precisión con soporte técnico directo.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@ROCEDental" },
@@ -93,7 +100,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

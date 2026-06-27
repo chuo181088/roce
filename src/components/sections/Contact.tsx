@@ -30,8 +30,8 @@ export function Contact() {
               Agende una asesoría con nuestro equipo.
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              Conversemos sobre las necesidades de su clínica o laboratorio.
-              Le respondemos en menos de 24 horas hábiles.
+              Conversemos sobre las necesidades de su clínica o laboratorio. Le respondemos en menos
+              de 24 horas hábiles.
             </p>
 
             <div className="mt-10 space-y-3">
@@ -69,9 +69,7 @@ export function Contact() {
                     {l.role}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                  {l.city}
-                </h3>
+                <h3 className="text-lg font-semibold tracking-tight text-foreground">{l.city}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{l.address}</p>
                 <div className="mt-auto space-y-2.5 border-t border-border pt-5 text-sm text-muted-foreground">
                   <p className="flex items-start gap-2.5">
