@@ -380,3 +380,8 @@
 @utility animate-shimmer {
   animation: shimmer 2.5s infinite linear;
 }
+
+@utility animate-shimmer-line {
+  animation: shimmer 2.5s infinite linear;
+  background-size: 200% 100%;
+}

@@ -1,6 +1,6 @@
 // src/components/sections/Hero.tsx
 import React from "react";
-import { Phone, Star, CircleUserRound, BookOpen } from "lucide-react";
+import { Star, CircleUserRound, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroAnimate } from "@/components/ui/HeroAnimate";
 import { cn } from "@/lib/utils";
