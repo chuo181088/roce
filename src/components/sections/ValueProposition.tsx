@@ -98,7 +98,7 @@ export function ValueProposition() {
                     <div className="flex items-center gap-4">
                       {/* Icono con estilo consistente */}
                       <div
-                        className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-md shadow-primary/10 transition-all duration-300 hover:from-primary hover:to-primary/80 hover:text-white hover:scale-105`}
+                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-md shadow-primary/10 transition-all duration-300 hover:from-primary hover:to-primary/80 hover:text-white hover:scale-105`}
                       >
                         <p.icon className="h-6 w-6" />
                       </div>
@@ -153,7 +153,7 @@ export function ValueProposition() {
               >
                 <div className="flex items-start gap-5">
                   <div
-                    className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-md shadow-primary/10 transition-all duration-300 hover:from-primary hover:to-primary/80 hover:text-white hover:scale-105`}
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-md shadow-primary/10 transition-all duration-300 hover:from-primary hover:to-primary/80 hover:text-white hover:scale-105`}
                   >
                     <activePillar.icon className="h-7 w-7" />
                   </div>
