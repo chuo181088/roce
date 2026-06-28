@@ -170,7 +170,6 @@
 }
 
 @utility marquee-mask {
-  /* Esto crea el fade a los lados */
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -181,8 +180,6 @@
   }
 
   100% {
-    /* Al tener 2 copias exactas en el mismo contenedor flex, 
-       mover -50% deja la segunda copia exactamente donde empezó la primera */
     transform: translateX(-50%);
   }
 }
@@ -287,6 +284,7 @@
   animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Versión FINAL de destello-movil (la más reciente) */
 @utility destello-movil {
   position: absolute;
   top: 0;
@@ -294,11 +292,74 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 100%);
-  animation: destello 4s infinite ease-in-out;
+      transparent 15%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 85%);
+  animation: destello 3s infinite ease-in-out;
   pointer-events: none;
+}
+
+@utility destello-movil-invertido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 15%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 85%);
+  animation: destello 3s infinite ease-in-out reverse;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@utility animate-shimmer {
+  animation: shimmer 2.5s infinite linear;
+}
+
+@utility animate-shimmer-line {
+  animation: shimmer 2.5s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes marquee-slow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee-slow {
+  animation: marquee-slow 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-marquee-reverse {
+  animation: marquee-reverse 25s linear infinite;
+  will-change: transform;
 }
 
 @utility delay-100 {
@@ -336,52 +397,44 @@
   }
 }
 
-@utility destello-movil {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* AJUSTE: Concentramos más el blanco en el centro (50%) subiendo la opacidad a 0.45 */
-  background: linear-gradient(90deg,
-      transparent 15%,
-      rgba(255, 255, 255, 0.45) 50%,
-      transparent 85%);
-  /* AJUSTE: Cambiado de 4s a 2s para que sea más rápido y reactivo */
-  animation: destello 3s infinite ease-in-out;
-  pointer-events: none;
-}
-
-@utility destello-movil-invertido {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent 15%,
-      rgba(255, 255, 255, 0.35) 50%,
-      transparent 85%);
-  /* Usa la misma animación pero con 'reverse' para que corra al revés */
-  animation: destello 3s infinite ease-in-out reverse;
-  pointer-events: none;
-}
-
-@keyframes shimmer {
+@keyframes marquee-medium {
   0% {
-    background-position: -200% 0;
+    transform: translateX(-50%);
   }
 
   100% {
-    background-position: 200% 0;
+    transform: translateX(0);
   }
 }
 
-@utility animate-shimmer {
-  animation: shimmer 2.5s infinite linear;
+/* Velocidad media (30s) - Hacia la izquierda */
+@keyframes marquee-medium {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-@utility animate-shimmer-line {
-  animation: shimmer 2.5s infinite linear;
-  background-size: 200% 100%;
+@utility animate-marquee-medium {
+  animation: marquee-medium 30s linear infinite;
+  will-change: transform;
+}
+
+/* Velocidad media (30s) - Hacia la derecha (Reverse) */
+@keyframes marquee-medium-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-marquee-medium-reverse {
+  animation: marquee-medium-reverse 30s linear infinite;
+  will-change: transform;
 }
