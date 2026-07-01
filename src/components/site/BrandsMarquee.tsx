@@ -40,7 +40,7 @@ function BrandLogo({ path, name }: { path: string; name: string }) {
 export function BrandsMarquee() {
   return (
     <section className="border-y border-slate-100 bg-slate-50/40 py-7 md:py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl lg:max-w-[1600px] xl:max-w-none mx-auto lg:mx-0 px-6 lg:px-12 xl:px-20">
 
         {/* MÓVIL: Layout original (NO TOCAR) */}
         <div className="grid grid-cols-1 md:hidden gap-12 items-center">

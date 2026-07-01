@@ -83,7 +83,7 @@ export function ValueProposition() {
       {/* Fondo sutil */}
       <div className="absolute inset-0 -z-10 opacity-[0.02] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto lg:mx-0 max-w-7xl lg:max-w-[1600px] xl:max-w-none px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Encabezado */}
         <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16 lg:mb-20">
           <span className="inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white border border-white/30 shadow-sm">
@@ -93,7 +93,7 @@ export function ValueProposition() {
             </span>
             Nuestra Propuesta
           </span>
-          <h2 className="mt-10 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:mt-4 sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
+          <h2 className="mt-10 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:mt-4 sm:text-4xl lg:text-3xl lg:whitespace-nowrap">
             Cuatro pilares que definen cada relación clínica.
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
@@ -216,8 +216,8 @@ export function ValueProposition() {
                     key={p.label}
                     onClick={() => setActiveIndex(index)}
                     className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-2xl transition-all duration-300 ${activeIndex === index
-                        ? "bg-white border-2 border-primary shadow-lg shadow-primary/20"
-                        : "bg-white/50 border border-border/40 hover:bg-white hover:border-primary/30"
+                      ? "bg-white border-2 border-primary shadow-lg shadow-primary/20"
+                      : "bg-white/50 border border-border/40 hover:bg-white hover:border-primary/30"
                       }`}
                   >
                     <div

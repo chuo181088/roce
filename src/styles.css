@@ -469,3 +469,22 @@
 @utility animate-border-pulse {
   animation: border-pulse 2s ease-in-out infinite;
 }
+
+/* Define la variable de ángulo para la animación */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Animación que rota el ángulo de 0 a 360 */
+@keyframes border-draw {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* Clase de utilidad para Tailwind */
+@utility animate-border-draw {
+  animation: border-draw 3s linear infinite;
+}
