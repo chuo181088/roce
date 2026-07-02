@@ -147,6 +147,7 @@ export function Solutions() {
       <div className="hidden lg:block absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="mx-auto lg:mx-0 max-w-7xl lg:max-w-[1600px] xl:max-w-none px-4 sm:px-6 lg:px-12 xl:px-20">
+
         {/* Encabezado */}
         <div className="mx-auto mb-15 max-w-2xl text-center sm:mb-16 lg:mb-15">
           <span className="inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white border border-white/20 shadow-sm lg:mb-10">
@@ -166,7 +167,7 @@ export function Solutions() {
           </p>
 
           <div className="mt-8 flex justify-center sm:mt-6">
-            <div className="h-0.5 w-64 rounded-full bg-gradient-to-r from-primary/0 via-primary/60 to-primary/0 bg-[length:200%_100%] animate-shimmer-line " />
+            <div className="h-0.5 w-64 md:w-64 md:w-[28rem] lg:w-[80rem] rounded-full bg-gradient-to-r from-primary/0 via-primary/60 to-primary/0 bg-[length:200%_100%] animate-shimmer-line " />
           </div>
         </div>
 

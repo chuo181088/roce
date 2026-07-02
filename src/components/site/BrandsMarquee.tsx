@@ -66,6 +66,7 @@ export function BrandsMarquee() {
 
           <div className="relative w-full overflow-hidden">
             <div className="relative flex w-full before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-slate-50/40 before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-slate-50/40 after:to-transparent">
+
               <div className="animate-marquee flex w-max items-center py-2 select-none will-change-transform">
                 <div className="flex shrink-0 items-center justify-around gap-12 pr-12">
                   {BRANDS.map((brand, i) => (
@@ -88,11 +89,13 @@ export function BrandsMarquee() {
           {/* ENCABEZADO CON BADGE PREMIUM */}
           <div className="flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
             {/* Badge/Certificado */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full lg:mb-10">
               <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-700">
+
+              {/*} VERSION PC {*/}
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-700 ">
                 Distribuidor Certificado
               </span>
             </div>
@@ -103,7 +106,9 @@ export function BrandsMarquee() {
             </h2>
 
             {/* Línea divisoria */}
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
+            <div className="mt-8 flex justify-center sm:mt-1 lg:mb-3">
+              <div className="h-0.5 w-64 md:w-64 md:w-[28rem] lg:w-[30rem] rounded-full bg-gradient-to-r from-primary/0 via-primary/60 to-primary/0 bg-[length:200%_100%] animate-shimmer-line" />
+            </div>
 
             {/* Descripción */}
             <p className="text-lg text-slate-600 leading-relaxed">
