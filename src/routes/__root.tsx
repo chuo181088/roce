@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Suministros odontológicos de precisión con soporte técnico directo.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-roce.png" }, // 👈 AGREGA ESTA LÍNEA
+      { property: "og:image", content: "/og-rocev2.png" }, // 👈 AGREGA ESTA LÍNEA
       { property: "og:image:width", content: "1200" }, // 👈 AGREGA ESTA LÍNEA
       { property: "og:image:height", content: "630" }, // 👈 AGREGA ESTA LÍNEA
 
@@ -101,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@ROCEDental" },
       { name: "twitter:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
       { name: "twitter:description", content: "Suministros odontológicos de precisión con soporte técnico directo." },
-      { name: "twitter:image", content: "/og-roce.png" }, // 👈 AGREGA ESTA LÍNEA
+      { name: "twitter:image", content: "/og-rocev2.png" }, // 👈 AGREGA ESTA LÍNEA
     ],
     links: [
       {
