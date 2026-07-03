@@ -1,6 +1,6 @@
 // src/components/sections/Hero.tsx
 import React from "react";
-import { CircleUserRound, BookOpen, ShieldCheck, Headphones, Truck } from "lucide-react";
+import { CircleUserRound, BookOpen, ShieldCheck, Headphones, Truck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroAnimate } from "@/components/ui/HeroAnimate";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ export function Hero({
   subtitulo = "en cada consulta.",
   descripcion = "Equipos de vanguardia, materiales de precisión y asesoría especializada para profesionales odontológicos que buscan lo mejor para sus pacientes.",
   rating = "4.9",
-  reviewsText = "de más de 150 clínicas",
+  reviewsText = "más de 150 clínicas atendidas",
   ctaText = "Ver Catálogo",
   ctaLink = "#equipos",
   phoneLink = "tel:+18090000000",
@@ -42,7 +42,7 @@ export function Hero({
       {(showEffects) => (
         <section
           id="top"
-          className="relative isolate overflow-hidden w-full pt-16 pb-12 md:min-h-screen md:pt-10 md:pb-5 bg-background flex items-center"
+          className="relative isolate overflow-hidden w-full pt-12 pb-12 md:min-h-screen md:pt-10 md:pb-5 bg-background flex items-center"
         >
           {/* 🖼️ Background Layer - SÓLO MÓVIL */}
           <div className="absolute inset-0 -z-30 w-full h-full overflow-hidden md:hidden">
@@ -50,20 +50,18 @@ export function Hero({
               src={fallbackImage}
               alt="Background"
               className={cn(
-                "absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out",
-                showEffects ? "blur-0 scale-100 opacity-95" : "blur-[6px] scale-105 opacity-80"
+                "absolute inset-0 h-full w-full object-cover transition-all duration-[1200ms] ease-out animate-zoom-out-dramatic",
+                showEffects ? "blur-0 opacity-95" : "blur-[6px] opacity-80"
               )}
             />
           </div>
-
-          {/* ✅ Background Layer PC - IMAGEN A SANGRE */}
-          <div className="absolute inset-0 -z-30 w-full h-full hidden md:block">
+          {/* ✅ Background Layer PC - IMAGEN A SANGRE con Ken Burns */}
+          <div className="absolute inset-0 -z-30 w-full h-full hidden md:block overflow-hidden">
             <img
               src={rocehero1}
               alt="Consultorio Dental ROCE"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center animate-zoom-out-pc"
             />
-            {/* Gradiente ajustado: blanco sólido a la izquierda, transparente al 60% */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white/0 to-[60%]" />
           </div>
 
@@ -80,7 +78,7 @@ export function Hero({
                  ========================================== */}
               <div
                 className={cn(
-                  "flex flex-col will-change-[transform,opacity] backface-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+                  "flex flex-col will-change-[transform,opacity] backface-hidden transition-all duration-[2500ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
                   showEffects
                     ? "translate-y-0 opacity-100 scale-100"
                     : "translate-y-6 opacity-0 scale-[0.98]"
@@ -111,22 +109,37 @@ export function Hero({
                   </span>
                 </h1>
 
+                {/* ⭐ BLOQUE DE VALORACIÓN (Rating) - Usando los props ocultos */}
+                <div className="flex items-center gap-2 mb-2 md:mb-4">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm md:text-base font-medium text-slate-100 md:text-slate-600">
+                    <span className="font-bold text-white md:text-slate-900">{rating}</span> · {reviewsText}
+                  </p>
+                </div>
+
+                {/* Descripción - Ancho reducido para alineación */}
+                <p className="max-w-md text-base sm:text-lg text-slate-100 md:text-slate-600 leading-relaxed mb-10"></p>
+
                 {/* Descripción - Ancho reducido para alineación */}
                 <p className="max-w-md text-base sm:text-lg text-slate-100 md:text-slate-600 leading-relaxed mb-10">
                   {descripcion}
                 </p>
 
                 {/* Botones Estilizados - Más grandes y separados en PC */}
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-center mb-12 md:mb-16">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-center mb-10 md:mb-16">
 
                   {/* Botón Principal */}
-                  <div className="relative overflow-hidden rounded-xl active:scale-95 transition-transform duration-200 w-full sm:w-auto">
+                  <div className="relative overflow-hidden rounded-xl mt-2 mb-2 active:scale-95 transition-transform duration-200 w-full sm:w-auto">
                     <div className="destello-movil absolute inset-0 z-10 block" />
                     <Button
                       asChild
                       size="lg"
                       // Cambios clave en desktop: px-10 py-6 (más ancho/alto), text-sm (más legible)
-                      className="w-full sm:w-auto relative z-0 rounded-none md:rounded-xl px-7 py-5 md:px-10 md:py-6 text-xs md:text-sm font-bold tracking-widest uppercase bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 transition-all duration-300 border-0"
+                      className="w-full sm:w-auto relative z-0 rounded-none md:rounded-xl px-7 py-5 md:px-10 md:py-6 text-sm md:text-sm font-bold tracking-widest uppercase bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 transition-all duration-300 border-0"
                     >
                       <a href="#" className="flex items-center justify-center gap-2">
                         {ctaText}
@@ -136,13 +149,13 @@ export function Hero({
                   </div>
 
                   {/* Botón Secundario */}
-                  <div className="relative overflow-hidden rounded-xl active:scale-95 transition-transform duration-200 w-full sm:w-auto">
+                  <div className="bg-white/10 relative overflow-hidden rounded-xl active:scale-95 transition-transform duration-200 w-full sm:w-auto ">
                     <div className="destello-movil-invertido absolute inset-0 z-10 block" />
                     <Button
                       asChild
                       size="lg"
                       // Mismos ajustes de tamaño aplicados al botón secundario
-                      className="w-full sm:w-auto relative z-0 rounded-none md:rounded-xl px-7 py-5 md:px-10 md:py-6 text-xs md:text-sm font-bold tracking-widest uppercase bg-white/5 md:bg-white text-white md:text-slate-900 border border-white/10 md:border-slate-200 hover:bg-white/10 md:hover:bg-slate-50 transition-all duration-300 backdrop-blur-sm md:backdrop-blur-none shadow-sm"
+                      className="w-full sm:w-auto relative z-0 rounded-none md:rounded-xl px-7 py-5 md:px-10 md:py-6 text-sm md:text-sm font-bold tracking-widest uppercase bg-white/5 md:bg-white text-white md:text-slate-900 border border-white/10 md:border-slate-200 hover:bg-white/10 md:hover:bg-slate-50 transition-all duration-300 backdrop-blur-sm md:backdrop-blur-none shadow-sm"
                     >
                       <a href="#asesoria" className="flex items-center justify-center gap-2">
                         Asesoría

@@ -84,14 +84,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Suministros odontológicos de precisión, equipos especializados y soporte técnico directo en Santiago y Santo Domingo.",
       },
       { name: "author", content: "ROCE Dental" },
+
+      // Open Graph - WhatsApp, Facebook, LinkedIn
       { property: "og:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
       {
         property: "og:description",
         content: "Suministros odontológicos de precisión con soporte técnico directo.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "/og-roce.png" }, // 👈 AGREGA ESTA LÍNEA
+      { property: "og:image:width", content: "1200" }, // 👈 AGREGA ESTA LÍNEA
+      { property: "og:image:height", content: "630" }, // 👈 AGREGA ESTA LÍNEA
+
+      // Twitter
+      { name: "twitter:card", content: "summary_large_image" }, // 👈 CAMBIA A summary_large_image
       { name: "twitter:site", content: "@ROCEDental" },
+      { name: "twitter:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
+      { name: "twitter:description", content: "Suministros odontológicos de precisión con soporte técnico directo." },
+      { name: "twitter:image", content: "/og-roce.png" }, // 👈 AGREGA ESTA LÍNEA
     ],
     links: [
       {
