@@ -116,7 +116,7 @@ head: () => ({
     },
     {
       property: "og:image",
-      content: "https://roce.pages.dev/og-rocev2.png",
+      content: "https://roce.pages.dev/og-rocev3.png",
     },
     {
       property: "og:image:width",
@@ -151,7 +151,7 @@ head: () => ({
     },
     {
       name: "twitter:image",
-      content: "https://roce.pages.dev/og-rocev2.png",
+      content: "https://roce.pages.dev/og-rocev3.png",
     },
     {
       name: "twitter:image:alt",
