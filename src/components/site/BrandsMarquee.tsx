@@ -1,20 +1,20 @@
 import { cn } from "@/lib/utils";
 
 const BRANDS = [
-  { name: "VITA", path: "/logos/vita.png" },
-  { name: "NSK", path: "/logos/nsk.png" },
-  { name: "Zhermack", path: "/logos/zhermack.png" },
-  { name: "Acteon", path: "/logos/acteon.png" },
-  { name: "Runyes", path: "/logos/runyes.png" },
-  { name: "Jota", path: "/logos/jota.png" },
-  { name: "DFL", path: "/logos/dfl.png" },
-  { name: "Cranberry", path: "/logos/cranberry.png" },
-  { name: "Maquira", path: "/logos/maquira.png" },
-  { name: "HuFriedy", path: "/logos/hu.png" },
-  { name: "Bego", path: "/logos/bego.png" },
-  { name: "Indusbello", path: "/logos/indusbello.png" },
-  { name: "Micerium", path: "/logos/micerium.png" },
-  { name: "TDV", path: "/logos/tdv.png" }
+  { name: "VITA", path: "/images/brands/vita.png" },
+  { name: "NSK", path: "/images/brands/nsk.png" },
+  { name: "Zhermack", path: "/images/brands/zhermack.png" },
+  { name: "Acteon", path: "/images/brands/acteon.png" },
+  { name: "Runyes", path: "/images/brands/runyes.png" },
+  { name: "Jota", path: "/images/brands/jota.png" },
+  { name: "DFL", path: "/images/brands/dfl.png" },
+  { name: "Cranberry", path: "/images/brands/cranberry.png" },
+  { name: "Maquira", path: "/images/brands/maquira.png" },
+  { name: "HuFriedy", path: "/images/brands/hu.png" },
+  { name: "Bego", path: "/images/brands/bego.png" },
+  { name: "Indusbello", path: "/images/brands/indusbello.png" },
+  { name: "Micerium", path: "/images/brands/micerium.png" },
+  { name: "TDV", path: "/images/brands/tdv.png" }
 ];
 
 const BRANDS_ROW_1 = BRANDS.slice(0, 7);
