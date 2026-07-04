@@ -2,7 +2,7 @@
 import React from "react";
 import { CircleUserRound, BookOpen, ShieldCheck, Headphones, Truck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroAnimate } from "@/components/ui/HeroAnimate";
+import { HeroAnimate } from "@/components/landing/HeroAnimate";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/roce.png";
 import rocehero1 from "@/assets/roce-hero1.png";
