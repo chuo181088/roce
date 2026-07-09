@@ -12,6 +12,10 @@ export const products: Product[] = [
             "/images/products/autoclave-runyes-17l-1.jpg",
             "/images/products/autoclave-runyes-17l-2.jpg"
         ],
+
+        destacado: true,
+        badge: 'nuevo',
+        descuento: 15,
         descripcion: "Autoclave de clase B con capacidad de 17 litros. Ideal para consultorios dentales de alto volumen. Ciclo automático con validación de esterilización.",
         caracteristicas: [
             "Clase B de alta eficiencia",
@@ -43,6 +47,9 @@ export const products: Product[] = [
         imagenes: [
             "/images/products/autoclave-runyes-23l-1.jpg"
         ],
+        destacado: true,
+        badge: 'oferta',
+        descuento: 20,
         descripcion: "Autoclave de clase B con capacidad de 23 litros. Diseñado para clínicas dentales con alto volumen de esterilización.",
         caracteristicas: [
             "Clase B de alta eficiencia",

@@ -1,53 +1,52 @@
-import { Category } from './types';
+import { Category } from "./types";
 
 export const categories: Category[] = [
     {
         id: "cat-001",
-        nombre: "Equipos de Esterilización",
-        slug: "equipos-esterilizacion",
-        descripcion: "Autoclaves, selladoras y equipos para esterilización de instrumental dental",
-        imagen: "/images/categories/esterilizacion.jpg"
+        nombre: "Equipos",
+        slug: "equipos",
+        descripcion: "Unidades dentales, autoclaves y equipos completos",
+        imagen: "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Equipos",
+        orden: 1
     },
     {
         id: "cat-002",
-        nombre: "Instrumental Rotatorio",
-        slug: "instrumental-rotatorio",
-        descripcion: "Piezas de mano, turbinas y micromotores de alta y baja velocidad",
-        imagen: "/images/categories/rotatorio.jpg"
+        nombre: "Materiales",
+        slug: "materiales",
+        descripcion: "Resinas, cementos y materiales de restauración",
+        imagen: "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Materiales",
+        orden: 2
     },
     {
         id: "cat-003",
-        nombre: "Diagnóstico por Imagen",
-        slug: "diagnostico-imagen",
-        descripcion: "Equipos de rayos X, sensores digitales y sistemas de imagen dental",
-        imagen: "/images/categories/imagen.jpg"
+        nombre: "Instrumental",
+        slug: "instrumental",
+        descripcion: "Instrumental quirúrgico y de diagnóstico",
+        imagen: "https://via.placeholder.com/400x300/10b981/ffffff?text=Instrumental",
+        orden: 3
     },
     {
         id: "cat-004",
-        nombre: "Materiales Dentales",
-        slug: "materiales-dentales",
-        descripcion: "Resinas, cementos, materiales de impresión y productos restaurativos",
-        imagen: "/images/categories/materiales.jpg"
+        nombre: "Radiología",
+        slug: "radiologia",
+        descripcion: "Equipos de rayos X y diagnóstico por imagen",
+        imagen: "https://via.placeholder.com/400x300/f59e0b/ffffff?text=Radiologia",
+        orden: 4
     },
     {
         id: "cat-005",
-        nombre: "Mobiliario Clínico",
-        slug: "mobiliario-clinico",
-        descripcion: "Unidades dentales, muebles clínicos y equipamiento para consultorios",
-        imagen: "/images/categories/mobiliario.jpg"
+        nombre: "Bioseguridad",
+        slug: "bioseguridad",
+        descripcion: "Elementos de protección y bioseguridad",
+        imagen: "https://via.placeholder.com/400x300/ef4444/ffffff?text=Bioseguridad",
+        orden: 5
     },
     {
         id: "cat-006",
-        nombre: "Iluminación y Fotocurado",
-        slug: "iluminacion-fotocurado",
-        descripcion: "Lámparas de fotocurado, lámparas clínicas y sistemas de iluminación",
-        imagen: "/images/categories/iluminacion.jpg"
-    },
-    {
-        id: "cat-007",
-        nombre: "Instrumental Quirúrgico",
-        slug: "instrumental-quirurgico",
-        descripcion: "Fórceps, elevadores, instrumental para cirugía oral y periodoncia",
-        imagen: "/images/categories/quirurgico.jpg"
+        nombre: "Consumibles",
+        slug: "consumibles",
+        descripcion: "Insumos desechables y consumibles clínicos",
+        imagen: "https://via.placeholder.com/400x300/6366f1/ffffff?text=Consumibles",
+        orden: 6
     }
 ];
