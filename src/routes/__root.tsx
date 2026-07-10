@@ -73,50 +73,121 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ROCE Dental — Excelencia clínica en el Cibao" },
-      {
-        name: "description",
-        content:
-          "Suministros odontológicos de precisión, equipos especializados y soporte técnico directo en Santiago y Santo Domingo.",
-      },
-      { name: "author", content: "ROCE Dental" },
+head: () => ({
+  meta: [
+    { charSet: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
 
-      // Open Graph - WhatsApp, Facebook, LinkedIn
-      { property: "og:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
-      {
-        property: "og:description",
-        content: "Suministros odontológicos de precisión con soporte técnico directo.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-rocev2.png" }, // 👈 AGREGA ESTA LÍNEA
-      { property: "og:image:width", content: "1200" }, // 👈 AGREGA ESTA LÍNEA
-      { property: "og:image:height", content: "630" }, // 👈 AGREGA ESTA LÍNEA
+    { title: "ROCE Dental — Excelencia clínica en el Cibao" },
 
-      // Twitter
-      { name: "twitter:card", content: "summary_large_image" }, // 👈 CAMBIA A summary_large_image
-      { name: "twitter:site", content: "@ROCEDental" },
-      { name: "twitter:title", content: "ROCE Dental — Excelencia clínica en el Cibao" },
-      { name: "twitter:description", content: "Suministros odontológicos de precisión con soporte técnico directo." },
-      { name: "twitter:image", content: "/og-rocev2.png" }, // 👈 AGREGA ESTA LÍNEA
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
-      },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-    ],
-  }),
+    {
+      name: "description",
+      content:
+        "Suministros odontológicos de precisión, equipos especializados y soporte técnico directo en Santiago y Santo Domingo.",
+    },
+
+    { name: "author", content: "ROCE Dental" },
+
+    // Open Graph
+    {
+      property: "og:title",
+      content: "ROCE Dental — Excelencia clínica en el Cibao",
+    },
+    {
+      property: "og:description",
+      content:
+        "Suministros odontológicos de precisión con soporte técnico directo.",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://roce.pages.dev/",
+    },
+    {
+      property: "og:site_name",
+      content: "ROCE Dental",
+    },
+    {
+      property: "og:locale",
+      content: "es_DO",
+    },
+    {
+      property: "og:image",
+      content: "https://roce.pages.dev/og-rocev3.png",
+    },
+    {
+      property: "og:image:width",
+      content: "1200",
+    },
+    {
+      property: "og:image:height",
+      content: "630",
+    },
+    {
+      property: "og:image:type",
+      content: "image/png",
+    },
+    {
+      property: "og:image:alt",
+      content: "ROCE Dental",
+    },
+
+    // Twitter
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "ROCE Dental — Excelencia clínica en el Cibao",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Suministros odontológicos de precisión con soporte técnico directo.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://roce.pages.dev/og-rocev3.png",
+    },
+    {
+      name: "twitter:image:alt",
+      content: "ROCE Dental",
+    },
+  ],
+
+  links: [
+    {
+      rel: "canonical",
+      href: "https://roce.pages.dev/",
+    },
+    {
+      rel: "stylesheet",
+      href: appCss,
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com",
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+    },
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      href: "/favicon.svg",
+    },
+  ],
+}),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
