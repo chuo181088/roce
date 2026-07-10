@@ -21,11 +21,11 @@ export function Logo({ className = "" }: { className?: string }) {
         </svg>
       </span>
       <span className="flex flex-col justify-center gap-0.5">
-        <span className="text-[15px] font-bold tracking-tight text-foreground leading-tight">
+        <span className="text-base font-bold tracking-tight text-foreground leading-tight">
           ROCE DENTAL
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/90 leading-none">
-          Distribuidora Médica
+        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/90 leading-none">
+          Distribuidora Odontológica
         </span>
       </span>
     </Link>

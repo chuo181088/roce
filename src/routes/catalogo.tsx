@@ -35,7 +35,7 @@ function CatalogoPage() {
       />
 
       {/* Resto del contenido - Con container */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
         <CategoryGrid categories={categories} />
         <BrandGrid brands={brands} />
 
