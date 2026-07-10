@@ -149,7 +149,7 @@ export function Solutions() {
       <div className="mx-auto lg:mx-0 max-w-7xl lg:max-w-[1600px] xl:max-w-none px-4 sm:px-6 lg:px-12 xl:px-20">
 
         {/* Encabezado */}
-        <div className="mx-auto mb-15 max-w-2xl text-center sm:mb-16 lg:mb-15">
+        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16 lg:mb-15">
           <span className="inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white border border-white/20 shadow-sm lg:mb-10">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/50 opacity-75" />
@@ -158,10 +158,10 @@ export function Solutions() {
             Nuestra Oferta
           </span>
 
-          <h2 className="mt-10 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:mt-4 sm:text-4xl lg:text-4xl">
+          <h2 className="mt-8 sm:mt-4 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl lg:text-4xl">
             Una sola fuente para la práctica clínica moderna.
           </h2>
-          <p className="mx-auto mt-8 max-w-lg text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
             Equipos, materiales y servicio técnico integrados y diseñados para clínicas y
             laboratorios que no pueden detenerse.
           </p>
@@ -172,7 +172,7 @@ export function Solutions() {
         </div>
 
         {/* MÓVIL: Grid de tarjetas (INTACTO) */}
-        <div className="grid gap-14 sm:gap-6 md:grid-cols-2 lg:hidden">
+        <div className="grid gap-8 sm:gap-6 md:grid-cols-2 lg:hidden">
           {cards.map((c, index) => (
             <article
               key={c.title}

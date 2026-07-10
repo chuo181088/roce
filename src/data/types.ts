@@ -12,6 +12,9 @@ export interface Product {
     categoria: string;
     relacionadoIds: string[];
     stock?: number;
+    destacado?: boolean;
+    badge?: 'nuevo' | 'oferta' | null;
+    descuento?: number;
 }
 
 export interface Category {
@@ -20,6 +23,15 @@ export interface Category {
     slug: string;
     descripcion: string;
     imagen: string;
+    orden?: number;
+}
+
+export interface Brand {
+    id: string;
+    nombre: string;
+    logo: string;
+    slug: string;
+    descripcion?: string;
 }
 
 export interface ProductFilters {
