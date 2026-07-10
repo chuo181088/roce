@@ -43,35 +43,78 @@ function CatalogoPage() {
         {!searchQuery && featuredProducts.length > 0 && (
           <section className="mb-12">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900">
-                Productos destacados
-              </h2>
-              <button className="text-sm text-primary font-medium hover:underline">
-                Ver todos →
+              <div>
+                <h2 className="text-xl md:text-2xl font-bold text-slate-900">
+                  Productos destacados
+                </h2>
+                <p className="text-sm text-slate-500 mt-1">
+                  Lo más vendido de nuestro catálogo
+                </p>
+              </div>
+              <button className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5">
+                Ver todos
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {featuredProducts.slice(0, 4).map(product => (
-                <div key={product.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
+                <div key={product.id} className="group relative bg-white rounded-xl border border-slate-200 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+                  {/* Badge */}
                   {product.badge && (
-                    <span className={`inline-block px-2 py-1 text-xs font-semibold rounded mb-2 ${product.badge === 'nuevo'
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-green-100 text-green-700'
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold rounded-full shadow-sm ${
+                        product.badge === 'nuevo'
+                          ? 'bg-blue-500 text-white'
+                          : 'bg-emerald-500 text-white'
                       }`}>
-                      {product.badge.toUpperCase()}
-                    </span>
+                        <span className={`w-1.5 h-1.5 rounded-full ${
+                          product.badge === 'nuevo' ? 'bg-blue-200' : 'bg-emerald-200'
+                        }`} />
+                        {product.badge === 'nuevo' ? 'NUEVO' : 'OFERTA'}
+                      </span>
+                    </div>
                   )}
 
-                  <div className="aspect-square bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-gray-400 text-xs">Imagen</span>
+                  {/* Área de imagen con gradiente */}
+                  <div className="aspect-square bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center relative overflow-hidden">
+                    <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center shadow-inner">
+                      <svg className="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    </div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
 
-                  <h3 className="font-semibold text-sm mb-1">{product.nombre}</h3>
-                  <p className="text-xs text-gray-500 mb-2">{product.marca}</p>
-                  <p className="text-lg font-bold text-primary">
-                    RD$ {product.precio.toLocaleString('es-DO')}
-                  </p>
+                  {/* Contenido */}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-sm text-slate-900 mb-1 line-clamp-1 leading-snug">
+                      {product.nombre}
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-3">
+                      {product.marca}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-base font-bold text-primary">
+                          RD$ {product.precio.toLocaleString('es-DO')}
+                        </p>
+                        {product.descuento && (
+                          <p className="text-[10px] text-emerald-600 font-medium">
+                            {product.descuento}% de descuento
+                          </p>
+                        )}
+                      </div>
+                      <button className="w-9 h-9 rounded-full border border-slate-200 hover:border-primary hover:bg-primary hover:text-white transition-all flex items-center justify-center text-slate-400 group-hover:border-primary/30">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

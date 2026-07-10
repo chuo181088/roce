@@ -56,5 +56,19 @@ export const brands: Brand[] = [
         slug: "bego",
         logo: "/images/brands/bego.png",
         descripcion: "Tecnología para la odontología moderna"
+    },
+    {
+        id: "brand-009",
+        nombre: "Runyes",
+        slug: "runyes",
+        logo: "/images/brands/runyes.png",
+        descripcion: "Equipos dentales de alta calidad"
+    },
+    {
+        id: "brand-010",
+        nombre: "HuFriedy",
+        slug: "hufriedy",
+        logo: "/images/brands/hu.png",
+        descripcion: "Instrumental quirúrgico de precisión"
     }
 ];
