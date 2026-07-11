@@ -6,7 +6,7 @@ export const categories: Category[] = [
         nombre: "Equipos",
         slug: "equipos",
         descripcion: "Unidades dentales, autoclaves y equipos completos",
-        imagen: "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Equipos",
+        imagen: "/images/categories/equipos.png",
         orden: 1
     },
     {
@@ -14,7 +14,7 @@ export const categories: Category[] = [
         nombre: "Materiales",
         slug: "materiales",
         descripcion: "Resinas, cementos y materiales de restauración",
-        imagen: "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Materiales",
+        imagen: "/images/categories/materiales.png",
         orden: 2
     },
     {
@@ -22,7 +22,7 @@ export const categories: Category[] = [
         nombre: "Instrumental",
         slug: "instrumental",
         descripcion: "Instrumental quirúrgico y de diagnóstico",
-        imagen: "https://via.placeholder.com/400x300/10b981/ffffff?text=Instrumental",
+        imagen: "/images/categories/instrumental.png",
         orden: 3
     },
     {
@@ -30,7 +30,7 @@ export const categories: Category[] = [
         nombre: "Radiología",
         slug: "radiologia",
         descripcion: "Equipos de rayos X y diagnóstico por imagen",
-        imagen: "https://via.placeholder.com/400x300/f59e0b/ffffff?text=Radiologia",
+        imagen: "/images/categories/radiologia.png",
         orden: 4
     },
     {
@@ -38,7 +38,7 @@ export const categories: Category[] = [
         nombre: "Bioseguridad",
         slug: "bioseguridad",
         descripcion: "Elementos de protección y bioseguridad",
-        imagen: "https://via.placeholder.com/400x300/ef4444/ffffff?text=Bioseguridad",
+        imagen: "/images/categories/bioseguridad.png",
         orden: 5
     },
     {
@@ -46,7 +46,7 @@ export const categories: Category[] = [
         nombre: "Consumibles",
         slug: "consumibles",
         descripcion: "Insumos desechables y consumibles clínicos",
-        imagen: "https://via.placeholder.com/400x300/6366f1/ffffff?text=Consumibles",
+        imagen: "/images/categories/consumibles.png",
         orden: 6
     }
 ];

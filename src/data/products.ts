@@ -4,13 +4,13 @@ export const products: Product[] = [
     {
         id: "prod-001",
         codigoInterno: "ROCE-AUT-001",
-        nombre: "Autoclave Clase B 17L",
+        nombre: "Autoclave Clase BB 17L",
         referencia: "RUN-AUT-17B",
         marca: "Runyes",
         precio: 185000,
         imagenes: [
-            "/images/products/autoclave-runyes-17l-1.jpg",
-            "/images/products/autoclave-runyes-17l-2.jpg"
+            "/images/products/auto1.png",
+            "/images/products/auto2.png",
         ],
 
         destacado: true,
@@ -45,7 +45,7 @@ export const products: Product[] = [
         marca: "Runyes",
         precio: 225000,
         imagenes: [
-            "/images/products/autoclave-runyes-23l-1.jpg"
+            "/images/products/auto2.png"
         ],
         destacado: true,
         badge: 'oferta',
@@ -79,7 +79,7 @@ export const products: Product[] = [
         marca: "Runyes",
         precio: 18500,
         imagenes: [
-            "/images/products/selladora-runyes-1.jpg"
+            "/images/products/selladora.png"
         ],
         descripcion: "Selladora automática de pouches para esterilización. Sellado continuo de alta velocidad.",
         caracteristicas: [
@@ -107,7 +107,7 @@ export const products: Product[] = [
         marca: "NSK",
         precio: 12500,
         imagenes: [
-            "/images/products/pieza-mano-nsk-1.jpg"
+            "/images/products/piezaAlta.png"
         ],
         descripcion: "Pieza de mano de alta velocidad con fibra óptica. Diseño ergonómico y balanceado para máximo confort.",
         caracteristicas: [
@@ -136,7 +136,7 @@ export const products: Product[] = [
         marca: "NSK",
         precio: 9800,
         imagenes: [
-            "/images/products/pieza-baja-nsk-1.jpg"
+            "/images/products/piezaBaja.png"
         ],
         descripcion: "Pieza de mano de baja velocidad con motor eléctrico. Ideal para procedimientos de profilaxis y ajuste.",
         caracteristicas: [
@@ -164,7 +164,7 @@ export const products: Product[] = [
         marca: "NSK",
         precio: 35000,
         imagenes: [
-            "/images/products/micromotor-nsk-1.jpg"
+            "/images/products/micromotor.png"
         ],
         descripcion: "Micromotor eléctrico de alta potencia para procedimientos de precisión. Control digital de velocidad.",
         caracteristicas: [
@@ -192,7 +192,7 @@ export const products: Product[] = [
         marca: "Acteon",
         precio: 145000,
         imagenes: [
-            "/images/products/rayos-x-acteon-1.jpg"
+            "/images/products/RXintraoral.png"
         ],
         descripcion: "Equipo de rayos X intraoral de alta frecuencia. Mínima dosis de radiación con máxima calidad de imagen.",
         caracteristicas: [
@@ -221,7 +221,7 @@ export const products: Product[] = [
         marca: "Acteon",
         precio: 195000,
         imagenes: [
-            "/images/products/sensor-rvg-acteon-1.jpg"
+            "/images/products/sensorDigital.png"
         ],
         descripcion: "Sensor digital de radiografía intraoral. Imágenes instantáneas de alta resolución con mínima dosis.",
         caracteristicas: [
@@ -250,7 +250,7 @@ export const products: Product[] = [
         marca: "Acteon",
         precio: 85000,
         imagenes: [
-            "/images/products/pantalla-psp-acteon-1.jpg"
+            "/images/products/pantalla.png"
         ],
         descripcion: "Sistema de imagen por fósforo fotosensible. Alternativa económica al sensor digital con excelente calidad.",
         caracteristicas: [
@@ -278,7 +278,7 @@ export const products: Product[] = [
         marca: "3M",
         precio: 2800,
         imagenes: [
-            "/images/products/resina-3m-z350-1.jpg"
+            "/images/products/resina.png"
         ],
         descripcion: "Resina compuesta nanorellena de alta estética. Excelente pulido y retención de brillo.",
         caracteristicas: [
@@ -307,7 +307,7 @@ export const products: Product[] = [
         marca: "GC",
         precio: 3200,
         imagenes: [
-            "/images/products/cemento-gc-fuji-1.jpg"
+            "/images/products/ionomero.png"
         ],
         descripcion: "Cemento de ionómero vítreo para restauraciones definitivas. Liberación de flúor y adhesión química.",
         caracteristicas: [
@@ -336,7 +336,7 @@ export const products: Product[] = [
         marca: "Zhermack",
         precio: 4500,
         imagenes: [
-            "/images/products/silicona-zhermack-1.jpg"
+            "/images/products/materialimpresion.png"
         ],
         descripcion: "Silicona de adición para impresiones de alta precisión. Excelente detalle y estabilidad dimensional.",
         caracteristicas: [
@@ -365,7 +365,7 @@ export const products: Product[] = [
         marca: "Bego",
         precio: 450000,
         imagenes: [
-            "/images/products/unidad-dental-bego-1.jpg"
+            "/images/products/sillon.png"
         ],
         descripcion: "Unidad dental completa con todos los accesorios. Diseño ergonómico para paciente y operador.",
         caracteristicas: [
@@ -394,7 +394,7 @@ export const products: Product[] = [
         marca: "Bego",
         precio: 35000,
         imagenes: [
-            "/images/products/mueble-auxiliar-bego-1.jpg"
+            "/images/products/muebleaux.png"
         ],
         descripcion: "Mueble auxiliar con ruedas para almacenamiento de instrumental y materiales. Diseño compacto.",
         caracteristicas: [
@@ -422,7 +422,7 @@ export const products: Product[] = [
         marca: "Bego",
         precio: 12500,
         imagenes: [
-            "/images/products/taburete-bego-1.jpg"
+            "/images/products/taburete.png"
         ],
         descripcion: "Taburete clínico con ajuste hidráulico de altura. Asiento ergonómico con respaldo.",
         caracteristicas: [
@@ -451,7 +451,7 @@ export const products: Product[] = [
         marca: "Runyes",
         precio: 8500,
         imagenes: [
-            "/images/products/lampara-fotocurado-runyes-1.jpg"
+            "/images/products/lamparaled.png"
         ],
         descripcion: "Lámpara de fotocurado LED de alta intensidad. Curado rápido y uniforme de resinas compuestas.",
         caracteristicas: [
@@ -480,7 +480,7 @@ export const products: Product[] = [
         marca: "Bego",
         precio: 45000,
         imagenes: [
-            "/images/products/lampara-clinica-bego-1.jpg"
+            "/images/products/plancha.png"
         ],
         descripcion: "Lámpara clínica LED para iluminación general del consultorio. Luz natural sin sombras.",
         caracteristicas: [
@@ -509,7 +509,7 @@ export const products: Product[] = [
         marca: "Runyes",
         precio: 11000,
         imagenes: [
-            "/images/products/lampara-inalambrica-runyes-1.jpg"
+            "/images/products/lamparainalambrica.png"
         ],
         descripcion: "Lámpara de fotocurado inalámbrica con batería de larga duración. Máxima movilidad en el consultorio.",
         caracteristicas: [
@@ -538,7 +538,7 @@ export const products: Product[] = [
         marca: "HuFriedy",
         precio: 28000,
         imagenes: [
-            "/images/products/forceps-hufriedy-1.jpg"
+            "/images/products/forcep.png"
         ],
         descripcion: "Set completo de fórceps para extracciones dentales. Acero inoxidable de alta calidad.",
         caracteristicas: [
@@ -567,7 +567,7 @@ export const products: Product[] = [
         marca: "HuFriedy",
         precio: 18500,
         imagenes: [
-            "/images/products/elevadores-hufriedy-1.jpg"
+            "/images/products/elevador.png"
         ],
         descripcion: "Set de elevadores para luxación y extracción dental. Diseño ergonómico para máximo control.",
         caracteristicas: [

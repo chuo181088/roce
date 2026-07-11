@@ -78,13 +78,21 @@ function CatalogoPage() {
                     </div>
                   )}
 
-                  {/* Área de imagen con gradiente */}
-                  <div className="aspect-square bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center relative overflow-hidden">
-                    <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center shadow-inner">
-                      <svg className="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                      </svg>
-                    </div>
+                  {/* Área de imagen */}
+                  <div className="aspect-square bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center relative overflow-hidden p-3">
+                    {product.imagenes?.[0] ? (
+                      <img
+                        src={product.imagenes[0]}
+                        alt={product.nombre}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-sm"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center shadow-inner">
+                        <svg className="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                      </div>
+                    )}
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
@@ -138,15 +146,32 @@ function CatalogoPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map(product => (
-                <div key={product.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
-                  <h3 className="font-semibold text-lg mb-2">{product.nombre}</h3>
-                  <p className="text-xl font-bold text-primary mb-2">
-                    RD$ {product.precio.toLocaleString('es-DO')}
-                  </p>
-                  <p className="text-sm text-gray-500 mb-3">{product.marca}</p>
-                  <button className="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                    Ver detalles
-                  </button>
+                <div key={product.id} className="flex gap-4 border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
+                  {/* Thumbnail */}
+                  <div className="w-24 h-24 shrink-0 rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 overflow-hidden flex items-center justify-center p-1.5">
+                    {product.imagenes?.[0] ? (
+                      <img
+                        src={product.imagenes[0]}
+                        alt={product.nombre}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <svg className="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    )}
+                  </div>
+                  {/* Info */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-base text-slate-900 mb-1 line-clamp-1">{product.nombre}</h3>
+                    <p className="text-xs text-slate-400 mb-2">{product.marca}</p>
+                    <p className="text-lg font-bold text-primary mb-2">
+                      RD$ {product.precio.toLocaleString('es-DO')}
+                    </p>
+                    <button className="w-full bg-primary text-white px-3 py-1.5 text-sm rounded-lg hover:bg-primary/90 transition-colors">
+                      Ver detalles
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
